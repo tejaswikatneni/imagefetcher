@@ -14,7 +14,7 @@ Approach:
 
 	Handled exceptions with rescue StandardError to catch errors
 
-Usage:
+Input:
 
 	Example content to place in test_list.txt
 	https://homepages.cae.wisc.edu/~ece533/images/airplane.png
