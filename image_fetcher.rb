@@ -10,12 +10,12 @@ class ImageFetcher
   def downloader
     return do_exit_downloder if @arguments.empty?
 
+    Dir.mkdir('images') unless Dir.exist?('images')
     File.open(@arguments[0]).each_line do |line|
       next if line.match(/^[\s]*$\n/)
 
       encoded_url = CGI.unescape(line.chomp)
       host_uri = URI.parse(encoded_url)
-      Dir.mkdir('images') unless Dir.exist?('images')
       http_image_downloader(host_uri)
     end
   end
