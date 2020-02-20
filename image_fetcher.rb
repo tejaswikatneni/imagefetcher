@@ -27,10 +27,15 @@ class ImageFetcher
 
   def http_image_downloader(host_uri)
     resp = Net::HTTP.get_response(host_uri)
-    File.open(File.join('images', host_uri.path.split('/')[-1]), 'wb') do |file|
-      file.write(resp.body)
+    if resp.is_a?(Net::HTTPSuccess)
+      path = File.join('images', host_uri.path.split('/')[-1])
+      File.open(path, 'wb') { |f| f.write(resp.body) }
+      puts "#{host_uri} ----File downloaded 100%---"
+    else
+      puts "#{host_uri} --- There is no content to download here"
     end
-    puts "#{host_uri} ----File downloaded 100%---"
+  rescue StandardError => e
+    puts "Error Message: #{host_uri} #{e}"
   end
 end
 p = ImageFetcher.new(ARGV)
