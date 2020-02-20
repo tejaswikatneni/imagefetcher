@@ -2,6 +2,7 @@
 Command line script that takes plain text file as an argument and download all images listed in each line and storing them on a local hard disk
 
 Approach:
+
 	System will takes the arguments from command line script those will come to the "initialize" method.
 
 	Downloader method is responsible for iterating file line by line, each line system will verify whether the current line has any content or not. If any content present in that line it allows for next step
@@ -14,6 +15,7 @@ Approach:
 	Handled exceptions with rescue StandardError to catch errors
 
 Usage:
+
 	Example content to place in test_list.txt
 	https://homepages.cae.wisc.edu/~ece533/images/airplane.png
 
@@ -28,6 +30,7 @@ Usage:
 	http://somewebsrv.com/img/992147.jpg
 
 Command:
+
 	ruby image_fetcher.rb 'filepath'
   
 	Example:
@@ -35,6 +38,7 @@ Command:
 	placed test file in imagefetcher folder for testing purpose.
 
 Output:
+
 	https://homepages.cae.wisc.edu/~ece533/images/airplane.png ----File downloaded 100%---
 	https://homepages.cae.wisc.edu/~ece533/images/arctichare.png ----File downloaded 100%---
 	https://homepages.cae.wisc.edu/~ece533/images/cat.png ----File downloaded 100%---
