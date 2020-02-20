@@ -9,6 +9,7 @@ class ImageFetcher
 
   def downloader
     return do_exit_downloder if @arguments.empty?
+    
     Dir.mkdir('images') unless Dir.exist?('images')
     File.open(@arguments[0]).each_line do |line|
       next if line.match(/^[\s]*$\n/)

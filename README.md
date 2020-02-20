@@ -35,6 +35,7 @@ Command:
 	placed test file in imagefetcher folder for testing purpose.
 
 Output:
+
 	https://homepages.cae.wisc.edu/~ece533/images/airplane.png ----File downloaded 100%---
 	https://homepages.cae.wisc.edu/~ece533/images/arctichare.png ----File downloaded 100%---
 	https://homepages.cae.wisc.edu/~ece533/images/cat.png ----File downloaded 100%---
