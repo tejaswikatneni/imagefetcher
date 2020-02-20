@@ -1,18 +1,17 @@
 # Imagefetcher
-Command line script that takes plain text file as an argument and download all images listed in each line and storing them on a local hard disk
+This "command line script" can be used to download the images listed in a plain text file and to store them on the local hard disk.
 
 Approach:
 
-	System will takes the arguments from command line script those will come to the "initialize" method.
+	The "Initialize" method will receive arguments from command line script.
 
-	Downloader method is responsible for iterating file line by line, each line system will verify whether the current line has any content or not. If any content present in that line it allows for next step
+	The "Downloader" method is responsible for iterating file line by line, here each line will be verified whether it has any content or not. Any line with content will be processed for next step where as empty lines will not be processed.
 
-	In the next steps encoding(using CGI to encode) and parsing(URI to parse) the url.
-	To save the images from URL creating one directory named "images" (system will check whether directory exists or not.)
+	In the next steps encoding(using CGI to encode) and parsing(URI to parse) the url will be done. To save the images from URL a directory named "images" will be created. However the system will also check whether directory already exists or not.
 
-	Used Net::HTTP to get the response from URL, From that if it get success response then it copies the content into images folder.
+	"Net::HTTP.get_response()" will fetch the response from URL, if the response is success then it copies the content into images folder.
 
-	Handled exceptions with rescue StandardError to catch errors
+	In case of exceptions "rescue StandardError" will catch the errors and give the relevant failure message.
 
 Input:
 
